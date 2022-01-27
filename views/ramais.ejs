@@ -1,0 +1,34 @@
+<%- include("_header") -%>
+
+<h1>Lista de Ramais <%= model.length %> </h1>
+
+
+<div class="table-responsive-sm">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Numero</th>
+                <th>Serial</th>
+                <th class="d-print-none">
+                    <a class="btn btn-sm btn-success" href="/create">Add</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (const ramal of model) { %>
+                <tr>
+                    <td><%= ramal.Numero %> </td>
+                    <td><%= ramal.Serial %> </td>
+                    <td class="d-print-none">
+                        <a class="btn btn-sm btn-warning" href="/edit/<%= ramal.Ramal_ID %> ">Edit</a>
+                        <a class="btn btn-sm btn-danger" href="/delete/<%= ramal.Ramal_ID %> ">Delete</a>
+
+                    </td>
+                </tr> 
+                <% } %> 
+        </tbody>
+    </table>
+</div>
+
+
+<%- include("_footer") -%> 
